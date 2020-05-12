@@ -25,7 +25,7 @@ Useful targets:
   * `make docs` : build documentation in HTML and Markdown.  By default, it will automatically generate API documentation for everyting in `myproject`.  Output documents can be found in `docs/build`.
   * `make clean`: cleans up generated binaries, virtualenvs, and documentation
 
-## Coding style and correct
+## Coding style and correctness
 
 This repo provides some default targets and configuration for `yapf` and `pylint`.
 
