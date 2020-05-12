@@ -25,6 +25,28 @@ Useful targets:
   * `make docs` : build documentation in HTML and Markdown.  By default, it will automatically generate API documentation for everyting in `myproject`.  Output documents can be found in `docs/build`.
   * `make clean`: cleans up generated binaries, virtualenvs, and documentation
 
+## Coding style and correct
+
+This repo provides some default targets and configuration for `yapf` and `pylint`.
+
+### yapf
+`yapf` is used to ensure everyone on a project is using a consistent format that complies with the PEP8 formatting recommendations that are standard within the Python community.  You can check your code's format:
+```
+make check-format
+```
+and even reformat automatically:
+```
+make format
+````
+
+`yapf.ini` is used to configure various rules.  The main customization we have in ours to is allow lines to be
+120 characters long, vs. the more standard (but too narrow) 80 characters.
+
+### pylint
+[`pylint`](http://www.pylint.org) is used to check code for common errors, as well as other common recommendations from PEP8.  It's a great tool to run even while you're still developing code - it can help catch "gotchas" before you ever run into the bugs!  When you run it, it will provide you a list of the errors in your code, as well as a score.  Your goal is a 10/10.  To run it:
+```
+make pylint
+```
 
 ## Auto-generated documentation
 
