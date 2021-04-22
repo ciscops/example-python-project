@@ -1,14 +1,15 @@
 # Makefile
 PYTHON_EXE = python3
-PROJECT_NAME="myproject"
+# PROJECT_NAME is used to create the virtualenv name
+PROJECT_NAME="example-project"
 TOPDIR = $(shell git rev-parse --show-toplevel)
+# PYDIRS is where we look for python code that needs to be linted
 PYDIRS="myproject"
 VENV = venv_$(PROJECT_NAME)
 VENV_BIN=$(VENV)/bin
-SRC_FILES := $(shell find myproject -name \*.py)
+SRC_FILES := $(shell find $(PYDIRS) -name \*.py)
 SPHINX_DEPS := $(shell find docs/source)
 GENERATED_DOC_SOURCES := $(shell find docs/source -maxdepth 1 -type f -name \*.rst -not -name index.rst)
-NON_PYTHON_LIBS := $(shell ls | grep -v myproject)
 
 help: ## Display help
 	@awk -F ':|##' \
